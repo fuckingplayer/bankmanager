@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-Mn-oTX">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="RQZ-Jb-S1F"/>
+                                </constraints>
+                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LEq-Vw-jYu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hnQ-xZ-FdA"/>
+                                </connections>
+                            </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO9-SO-AT8">
+                                <rect key="frame" x="65" y="0.0" width="535" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="hz6-9b-Uzm"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="u5Z-gI-5HW" kind="embed" id="FNk-e8-qt7"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iqb-Mn-oTX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FQS-P0-hox"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iqb-Mn-oTX" secondAttribute="bottom" id="J4r-0P-Jlb"/>
+                            <constraint firstItem="iqb-Mn-oTX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kdv-Vz-2eK"/>
+                            <constraint firstItem="cO9-SO-AT8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MB8-YY-wMI"/>
+                            <constraint firstItem="cO9-SO-AT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="65" id="eUs-vs-5Rs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cO9-SO-AT8" secondAttribute="bottom" id="obq-MF-yEI"/>
+                            <constraint firstAttribute="trailing" secondItem="cO9-SO-AT8" secondAttribute="trailing" id="sc8-sY-4UN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="optionsList" destination="iqb-Mn-oTX" id="cPB-H7-Vf0"/>
+                        <outlet property="rightView" destination="cO9-SO-AT8" id="ivo-oZ-fmx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="226" y="264"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Suo-VR-WFs">
+            <objects>
+                <viewController id="u5Z-gI-5HW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dgw-RS-QsF"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ve-Kk-7DR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFp-G7-SfG">
+                        <rect key="frame" x="0.0" y="0.0" width="535" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EV7-ZI-W1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809.5" y="264"/>
         </scene>
     </scenes>
 </document>
